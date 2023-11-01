@@ -5,8 +5,215 @@
         <title>Cim</title>    
     </head>
     <body>
+        <!-- ################# 1. pelda ################## -->
+        <h1>1. pelda</h1>
+        <div class="valami"></div>
+        <style>
+            .valami{
+
+            }
+        </style>
+
+        <!-- ################# 2. pelda: class-ok halmozása ################## -->
+        <h1>2. pelda: class-ok halmozása </h1>
+
+        <!-- "button leírás"-->
+        <style>
+            .button{
+                padding: 9px 16px;
+                border-color: cadetblue;
+            }
+            /* ez a primary style alkalmazhato elvileg mas HTML elemekre is, nem csak a buttonra*/
+            .primary{
+                background-color: rgb(230, 136, 136);
+            }
+            .secondary{
+                background-color: gray;
+            }
+        </style>
+
+        <!-- a "class" itt egy u.n. szelektor-->
+        <button class="button primary">CTA</button> <!--CTA: call to action-->
+        <button class="button secondary">Cancel</button>
+
+        <div class="primary">
+            <p> A CTA-button mellett pl. ez a div is megkaphatja .primary style-t (meg is kapta).
+                Viszont ha nem .primary -kent, hanem button.primary -kent definialnank, 
+                akkor az mar nem müködne a div-re.
+            </p>
+            <p>
+                Szelektor: amivel HTML elemek egy csoportjat/osztajat tudjuk azonositani
+            </p>
+            <p>
+                CSS-ben definialtunk style-okat ("osztály" PDF7). 
+                Ezek u.n. szelektora
+                <ul>
+                    <li>HTML-ben: "class" </li>
+                    <li>CSS-ben: "." (egy pont a neve elött) </li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- ################# 3. pelda: ################## -->
+        <h1>3. pelda: id selector </h1>
+        <p>Az id attributum erteke az egesz ... 
+            Nem lehet semmilyen HTML tag, aminek ugyanez az id-ja.
+        </p>
+        <p> 
+            Tipp: validatorban tesztelni.
+        </p>
+        <p> 
+            A CSS-t nem zavarja annyira, ha egy id-bol kettö van, de a JavaScriptet igen.
+        </p>
+        <form id="send">
+
+        </form>
+
+        <!-- ################# 4. pelda: ################## -->
+        <h1>4. pelda: boxmodell </h1>
+
+        <style>                        
+            .card {
+                font-size: 32px;
+            }
+            .elsodleges {
+                color: red;
+                padding: 20px;
+                border: 20px solid transparent;
+                margin: 20px;
+            }
+            .masodlagos {
+                color: blue;
+            }
+        </style>
+
+        <div class="card elsodleges">dsfsdfaasdf</div>
+        <div class="card masodlagos">gsfgasdafsds</div>
+
+        <p>BoxModellt vizualisan a DevTools-ban is meg lehet nezni. Screenshot:</p>
+        <div style="background-color: grey" >
+            <img src="BoxModell_DevTools.png" style="margin: 30px; ">   
+        </div>
 
 
+        <!-- ################# 5. pelda: ################## -->
+        <h1>5. pelda: boxmodell, box-sizing </h1>
+        <div style="
+            width: 150px;
+            border: 5px solid transparent; 
+            padding: 5px; 
+            margin: 5px;
+            box-sizing: border-box;"           
+        >1. div</div>
+
+        <div style="
+            width: 150px;
+            border: 5px solid transparent; 
+            padding: 5px; 
+            margin: 5px;
+            box-sizing: content-box;"           
+        >2. div</div>
+
+        <p>Az 1. div box-sizingja border-box, a 2.-e content-box.</p>
+
+        <p>DevTools-ban a legbelsö teglalap (kék) mutatott szelessege az 1. div-nel (border box) 130 lesz, a 2. divnel (content-box) 150. </p>
+   
+        <!-- ################# 6. pelda: ################## -->
+        <h1>6. pelda: legfontosabb CSS propertyk </h1>
+        <h2>display=inline</h2>
+           
+        <div style="
+            width: 150px;
+            border: 5px solid transparent; 
+            padding: 5px; 
+            margin: 5px;
+            display: inline;
+            "           
+        >1. div</div>
+
+        <div style="
+            width: 150px;
+            border: 5px solid transparent; 
+            padding: 5px; 
+            margin: 5px;
+            "           
+        >2. div</div>
+        <hr>
+        <p>Az 1. div-nel a <i>display=inline</i> van beallitva. Ez nem töri meg a szöveg folyasat, 
+            hanem a szöveg köre ekelödik, mint egy kiemelö filc. <br>
+            Ez olyan, mint a span tag. (A span tagnek alapbol inline a display erteke)
+        </p>
+        <hr>
+        <p>
+            Div alaperteke: <i>display=block</i>. Ez a teljes szeles doboz. <br>
+            A 2. div-nel ez van.
+        </p>
+        <hr>
+        <p>
+            <i>display=flex, grid </i>: majd jön meg reszletesebben 
+        </p>
+        <hr>
+        <p>
+            <i>display=inline-block, inline-flex, inline-grid </i>: szöveg köze ekelt tablazat...
+        </p>
+        <hr>
+        <p>
+            <i>display=inline-table, table-..., table-... </i>: 
+            relativ ritkan hasznaljuk, regen a HTML epitesben volt szerepük. 
+            Most mar vannak civilizaltabb megoldasaink
+        </p>
+
+        <!-- ----------------------- -->
+        <hr>
+        <h2>border</h2>
+           
+        <div style="
+            width: 150px;
+            border: 1px solid black; 
+            padding: 25px; 
+            margin: 5px;
+            "           
+        >1. div</div>
+
+        <div style="
+            width: 150px;
+            border: 1px solid black; 
+            padding: 5px; 
+            margin: 5px;
+            box-sizing: content-box;           
+            "           
+        >2. div</div>
+
+        <!--------------------->
+        <hr>
+        <h2>margin: auto</h2>
+        <div style="
+            width: 150px;
+            border: 1px solid black; 
+            padding: 25px; 
+            margin: 5px;
+            margin:auto;
+            "           
+        >1. div</div>
+
+        <div style="
+            width: 150px;
+            border: 1px solid black; 
+            padding: 5px; 
+            margin: 5px;
+            box-sizing: content-box;           
+            "           
+        >2. div</div>
+        <p>
+            Közepre igazitja a blokkot, 
+            de horizontalisan <i>display=block</i> eseten nem fer el mellette semmi.
+            Ezert kerül a 2. div mar egy uj sorba.
+        </p>
+            
+        <!--------------------->
+        <hr>
+        <h2>font</h2>
+        <p>1:00:00-tol</p>
+        
     </body>
-
 </html>
